@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>
+			Movies Review
+		</title>
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<script type="text/javascript" src="films.js"></script>
+	</head>
+	<body>
+		<div class = "main">
+				<div class="row">
+					<div class="column">
+						<div class="card">
+							<div class="container">
+								<form onsubmit="return API.createFilm();" id="add">
+								  <input type="text" class ="form-input-field" id="movie-name" name="firstname" placeholder="Enter Movie name here.." required  oninvalid="this.setCustomValidity('Title is Empty')" oninput="setCustomValidity('')"></input>
+								  <input type="number" class ="form-input-field"  id="movie-rating" name="rating" placeholder="In a Scale of 1 to 5 Rate Your Movie.." required oninvalid="this.setCustomValidity('Rating is Empty')" oninput="setCustomValidity('')"></input>
+								  <input class = "submit-btn" type="submit" value="Submit">
+								</form>
+								<br>
+								<div class="alertMsg" id="alertMsgSave">Movie Successfully Added</div>
+								<div class="alertMsg" id="alertMsgMovie">Enter a Valid Title</div>
+								<div class="alertMsg" id="alertMsgRating">Enter a Valid Rating</div>
+								<br>
+								<input class = "view-btn" type="submit" value="View All Movies" onclick="return API.getFilms();">
+								<br>
+								<div id="dvTable">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+

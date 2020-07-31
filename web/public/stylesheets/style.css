@@ -1,0 +1,132 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+/* Background Styling */
+.main{
+  height:100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/bg-img.jpeg');
+  background-position:center;
+  background-size:cover;
+  position: absolute;
+}
+
+/* Row and Column and Container Styling start */
+.row {
+  margin: 4% 10px;
+} 
+.column {
+  position: relative;
+  float: center;
+  width: 40%;
+  padding: 0 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+/* Row and Column and Container Styling Ends  */
+
+
+/* Alert Message  */
+.alertMsg {
+  display: none;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20px;
+  left: 31%;
+  height: 2em;
+  width: 38%;
+  text-justify: auto;
+  text-align: center;
+  color: #ffffff;
+  z-index: 999;
+}
+
+/* Form Input Field */
+.form-input-field {
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px; 
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/* Buttons Styling Start */
+.submit-btn {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #009879;
+  color: #ffffff;
+}
+.view-btn {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #009879;
+  color: #ffffff;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+/* Buttons Styling End */
+
+
+/* Table Styling Start */
+.content-table {
+  border-collapse: collapse;
+  border: 1px;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.content-table th{
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: #009879;
+  color: #ffffff;
+}
+.content-table tr {
+  background-color: #009879;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 7px 7px 0 0;
+}
+.content-table td {
+  padding: 12px 15px;
+  text-align: justify;
+}
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+  
+}
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+/* Table Styling Ends */
