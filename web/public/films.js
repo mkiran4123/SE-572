@@ -1,7 +1,34 @@
 
 var API = (() =>{
 
-
+var jwtToken;
+var authLogin = () => {
+    const val = document.getElementById('user').value;
+    try{
+        fetch("http://localhost:8080/api/v1/login",{
+            method: 'POST',
+            body: JSON.stringify({
+                username: val
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        }).then(resp => resp.json())
+            .then(data => {
+                jwtToken = data.token;
+            });
+        document.getElementById('user').value=''
+        document.getElementById('alertMsglogin').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('alertMsglogin').style.display = 'none';
+        }, 3000);
+    } catch (e){
+        console.log(e);
+        console.log('_________________');
+    }
+    return false;
+}
 
 var createFilm = () => {
     var movie = document.getElementById('movie-name')
@@ -31,15 +58,28 @@ var createFilm = () => {
                 }),
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + jwtToken
                 }
-            });
-            document.getElementById('movie-name').value=''
-            document.getElementById('movie-rating').value=''
-            document.getElementById('alertMsgSave').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('alertMsgSave').style.display = 'none';
-            }, 1000);
+            }).then(resp => {
+                setTimeout(function() {
+                    if(resp.status == 200){
+                        document.getElementById('movie-name').value=''
+                        document.getElementById('movie-rating').value=''
+                        document.getElementById('alertMsgSave').style.display = 'block';
+                        setTimeout(() => {
+                            document.getElementById('alertMsgSave').style.display = 'none';
+                        }, 3000);
+                    } else {
+                        document.getElementById('movie-name').value=''
+                        document.getElementById('movie-rating').value=''
+                        document.getElementById('alertMsg403').style.display = 'block';
+                        setTimeout(() => {
+                            document.getElementById('alertMsg403').style.display = 'none';
+                        }, 3000);
+                    }
+                })
+            })    
         } catch (e){
             console.log(e);
             console.log('-----------------------');
@@ -100,6 +140,7 @@ var getFilms = () => {
 }
 
 return{
+    authLogin,
     createFilm,
     getFilms
 }
