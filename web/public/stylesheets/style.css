@@ -1,38 +1,39 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box;
 }
 /* Background Styling */
-.main{
-  height:100%;
+.main {
+  height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/bg-img.jpeg');
-  background-position:center;
-  background-size:cover;
+  /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/bg-img.jpeg'); */
+  background-position: fill;
+  background-size: auto;
   position: absolute;
 }
 
 /* Row and Column and Container Styling start */
 .row {
-  margin: 4% 10px;
-} 
+  margin: 5% 2%;
+}
 .column {
   position: relative;
   float: center;
   width: 40%;
-  padding: 0 10px;
   margin-left: auto;
   margin-right: auto;
 }
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  border-radius: 2%;
+  background-color: #a9a9a9;
+  padding: 5%;
+  width: auto;
+  overflow: scroll;
+  height: auto;
 }
 /* Row and Column and Container Styling Ends  */
-
 
 /* Alert Message  */
 .alertMsg {
@@ -40,79 +41,88 @@
   position: fixed;
   margin-left: auto;
   margin-right: auto;
-  top: 20px;
+  top: 1%;
   left: 31%;
   height: 2em;
   width: 38%;
   text-justify: auto;
   text-align: center;
-  color: #ffffff;
+  color: black;
   z-index: 999;
 }
 
 /* Form Input Field */
 .form-input-field {
-  width: 100%; 
-  padding: 12px;
-  border: 1px solid #ccc; 
-  border-radius: 4px;
+  width: 100%;
+  padding: 4%;
+  font-size: 100%;
+  border: 2% solid #ccc;
+  border-radius: 2%;
   box-sizing: border-box;
-  margin-top: 6px; 
-  margin-bottom: 16px;
+  margin-top: 4%;
+  margin-bottom: 8%;
   resize: vertical;
 }
 
 /* Buttons Styling Start */
 .submit-btn {
   color: white;
-  padding: 12px 20px;
+  font-size: 100%;
+  padding: 4% 3%;
   border: none;
-  border-radius: 4px;
+  border-radius: 9%;
   cursor: pointer;
-  background-color: #009879;
+  background-color: Black;
+  width: auto;
   color: #ffffff;
 }
 .view-btn {
   color: white;
-  padding: 12px 20px;
+  font-size: 20px;
+  padding: 4% 3%;
   border: none;
-  border-radius: 4px;
+  width: auto;
+  border-radius: 9%;
+  font-size: 100%;
   cursor: pointer;
-  background-color: #009879;
+  background-color: black;
   color: #ffffff;
 }
-input[type=submit]:hover {
-  background-color: #45a049;
+input[type="button"]:hover {
+  background-color: #505050;
+}
+
+input[type="submit"]:hover {
+  background-color: #505050;
 }
 /* Buttons Styling End */
-
 
 /* Table Styling Start */
 .content-table {
   border-collapse: collapse;
   border: 1px;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
+  margin: 8% auto;
+  font-size: 100%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow-y: scroll;
 }
-.content-table th{
+.content-table th {
   color: white;
-  padding: 12px 20px;
-  border-radius: 4px;
-  background-color: #009879;
+  padding: 2%;
+  border-radius: 9%;
+  background-color: black;
   color: #ffffff;
 }
 .content-table tr {
-  background-color: #009879;
-  color: #000000;
+  background-color: black;
+  color: #ffffff;
   text-align: left;
   font-weight: bold;
-  border-radius: 7px 7px 0 0;
+  border-radius: 5% 5% 0 0;
 }
 .content-table td {
-  padding: 12px 15px;
+  padding: 4% 3%;
   text-align: justify;
 }
 .content-table tbody tr {
@@ -120,10 +130,10 @@ input[type=submit]:hover {
 }
 .content-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+  color: black;
 }
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-  
+  border-bottom: 2px solid black;
 }
 .content-table tbody tr.active-row {
   font-weight: bold;

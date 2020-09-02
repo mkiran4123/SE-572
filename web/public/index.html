@@ -13,22 +13,28 @@
 						<div class="card">
 							<div class="container">
 								<form onsubmit="return API.authLogin()" id="login">
-									<input type="text" class ="form-input-field" id="user" name="login" placeholder="Enter Username here.." required>
+									<input type="text" class ="form-input-field" id="user" name="login" placeholder="Enter Username here.." required oninvalid="this.setCustomValidity('Username is Empty')" oninput="setCustomValidity('')">
 									<input class = "submit-btn" type="submit" value= "Login">
 								</form>
 								<br>
 								<br>
-								<form onsubmit="return API.createFilm();" id="add">
+								<!-- <form onsubmit="return API.createFilm(this);" id="add"> -->
+								<form id="add">
 								  <input type="text" class ="form-input-field" id="movie-name" name="firstname" placeholder="Enter Movie name here.." required  oninvalid="this.setCustomValidity('Title is Empty')" oninput="setCustomValidity('')"></input>
 								  <input type="number" class ="form-input-field"  id="movie-rating" name="rating" placeholder="In a Scale of 1 to 5 Rate Your Movie.." required oninvalid="this.setCustomValidity('Rating is Empty')" oninput="setCustomValidity('')"></input>
-								  <input class = "submit-btn" type="submit" value="Submit">
+								  <input class = "submit-btn" type="button" value="Submit" onclick="return API.createFilm();">
+								  <input class = "submit-btn" type="button" value="Update" onclick="return API.updateFilm();">
 								</form>
 								<br>
-								<div class="alertMsg" id="alertMsglogin">Login Successfully</div>
+								<div class="alertMsg" id="alertMsglogin">Login Successful</div>
+								<div class="alertMsg" id="alertMsgInvalidlogin">Invalid Username</div>
 								<div class="alertMsg" id="alertMsgSave">Movie Successfully Added</div>
 								<div class="alertMsg" id="alertMsg403">403 - Unauthorised User</div>
 								<div class="alertMsg" id="alertMsgMovie">Enter a Valid Title</div>
 								<div class="alertMsg" id="alertMsgRating">Enter a Valid Rating</div>
+								<div class="alertMsg" id="alertMsgSaveError">Can't save, Movie-Rating already added</div>
+								<div class="alertMsg" id="alertMsgUpdateError">Can't update, Movie-Rating not added</div>
+								<div class="alertMsg" id="alertMsgUpdate">Rating updated Successfully</div>
 								<br>
 								<input class = "view-btn" type="submit" value="View All Movies" onclick="return API.getFilms();">
 								<br>

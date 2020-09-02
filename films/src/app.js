@@ -20,6 +20,16 @@ app.get("/api/v1/films", async(req, res) => {
   res.json(films);
 });
 
+app.post("/api/v1/films/check", async(req, res) => {
+  const films = await Film.find({name : req.body.name}).count();
+  res.json({count: films});
+});
+
+app.put("/api/v1/films", async(req, res) => {
+  const films = await Film.update({name : req.body.name},{$set: { rating : req.body.rating}});
+  res.json(films);
+});
+
 app.post("/api/v1/films", verifyToken, async(req, res) =>{
   const film = new Film({name : req.body.name, rating : req.body.rating});
   const saveFilm = await film.save();
